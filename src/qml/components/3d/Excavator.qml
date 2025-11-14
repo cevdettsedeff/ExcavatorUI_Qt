@@ -25,9 +25,9 @@ Node {
         var rad = angle * Math.PI / 180
         var result = Qt.matrix4x4()
         result.translate(point.x, point.y, point.z)
-        if (axis.z !== 0) result.rotate(angle, 0, 0, 1)
-        else if (axis.y !== 0) result.rotate(angle, 0, 1, 0)
-        else if (axis.x !== 0) result.rotate(angle, 1, 0, 0)
+        if (axis.z !== 0) result.rotate(angle, Qt.vector3d(0, 0, 1))
+        else if (axis.y !== 0) result.rotate(angle, Qt.vector3d(0, 1, 0))
+        else if (axis.x !== 0) result.rotate(angle, Qt.vector3d(1, 0, 0))
         result.translate(-point.x, -point.y, -point.z)
         return result
     }
@@ -90,7 +90,7 @@ Node {
         // Transform calculation for arm1
         property var transformMatrix: {
             var mat = Qt.matrix4x4()
-            mat.rotate(angle0, 0, 0, 1)
+            mat.rotate(angle0, Qt.vector3d(0, 0, 1))
             var rotMat = rotateAround(joint0, angle1, Qt.vector3d(0,0,1))
             return mat.times(rotMat)
         }
