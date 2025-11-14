@@ -298,8 +298,8 @@ ApplicationWindow {
 	property var db
 
 	Component.onCompleted: {
-		x = (Screen.desktopAvailableWidth-width)/2
-		y = (Screen.desktopAvailableHeight-height)/2
+		// Window geometry is now handled by Qt automatically
+		// Manual positioning can cause geometry warnings on multi-monitor setups
 
 		db = LocalStorage.openDatabaseSync("ExcavatorDB", "1.0", "Excavator Historical Data", 1000);
 

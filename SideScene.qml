@@ -28,11 +28,9 @@ Entity {
 		id: machine1
 		radius: root.radius
 		y: 0
-		components: [
-			Transform {
-				scale: 0.025
-				translation: Qt.vector3d(0.3, 0, 0)
-			}
-		]
+		scale: 0.025
+		customX: 0.3
+		customZ: 0
+		pos: 0  // Fixed position, no rotation
 	}
 }

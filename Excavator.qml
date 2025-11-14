@@ -15,6 +15,11 @@ Entity {
 	property real angle2: Math.random() * 90
 	property real radius: 1.0
 	property real y: 0.2
+	property real scale: 0.015
+
+	// Optional custom position overrides (if not set, calculated from pos and radius)
+	property real customX: NaN
+	property real customZ: NaN
 
 	property vector3d joint0: Qt.vector3d(-11.69973, 1.59875, 1.)
 	property vector3d joint1: Qt.vector3d(-22.08812, -5.44126, 1.)
@@ -22,9 +27,12 @@ Entity {
 	components: [
 		Transform {
 			id: rootTransform
-			scale: 0.015
-			translation: Qt.vector3d(.85 * radius * Math.cos(pos * Math.PI / 180), y,
-									 -.85 * radius * Math.sin(pos * Math.PI / 180))
+			scale: root.scale
+			translation: Qt.vector3d(
+				isNaN(customX) ? .85 * radius * Math.cos(pos * Math.PI / 180) : customX,
+				y,
+				isNaN(customZ) ? -.85 * radius * Math.sin(pos * Math.PI / 180) : customZ
+			)
 			rotation: fromAxisAndAngle(Qt.vector3d(0, 1, 0), pos)
 		}
 	]
