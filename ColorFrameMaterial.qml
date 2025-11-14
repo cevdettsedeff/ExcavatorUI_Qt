@@ -1,5 +1,5 @@
-import Qt3D.Core 2.0
-import Qt3D.Render 2.0
+import Qt3D.Core
+import Qt3D.Render
 
 Material {
 	id: material
@@ -25,8 +25,8 @@ Material {
 					]
 					renderStates: CullFace { mode: CullFace.NoCulling }
 					shaderProgram: ShaderProgram {
-						vertexShaderCode: loadSource("file:./shaders/passthrough.vert")
-						fragmentShaderCode: loadSource("file:./shaders/colorframe.frag")
+						vertexShaderCode: loadSource("file:shaders/passthrough.vert")
+						fragmentShaderCode: loadSource("file:shaders/colorframe.frag")
 					}
 				}
 

@@ -1,9 +1,9 @@
-import QtQuick 2.6 as QQ2
+import QtQuick as QQ2
 
-import Qt3D.Core 2.0
-import Qt3D.Render 2.0
-import Qt3D.Input 2.0
-import Qt3D.Extras 2.0
+import Qt3D.Core
+import Qt3D.Render
+import Qt3D.Input
+import Qt3D.Extras
 
 Entity {
 	id: root
@@ -49,7 +49,7 @@ Entity {
 	// ------------------ ARM 0 ------------------
 	Entity {
 		id: arm0
-		Mesh { id: arm0Mesh; source: "../objects/excavator_arm0.obj" }
+		Mesh { id: arm0Mesh; source: "file:objects/excavator_arm0.obj" }
 		ColorMaterial { id: fillMaterial0; color: "#e7e824" }
 		Transform { id: t0; rotation: transform0.rotation }
 		components: [arm0Mesh, fillMaterial0, t0]
@@ -57,7 +57,7 @@ Entity {
 
 	Entity {
 		id: arm0Wire
-		Mesh { id: arm0WireMesh; source: "../objects/excavator_arm0_wire.obj" }
+		Mesh { id: arm0WireMesh; source: "file:objects/excavator_arm0_wire.obj" }
 		ColorMaterial { id: wireMaterial0; color: "#232323" }
 		Transform { id: t0w; rotation: transform0.rotation }
 		components: [arm0WireMesh, wireMaterial0, t0w]
@@ -67,7 +67,7 @@ Entity {
 	// ------------------ ARM 1 ------------------
 	Entity {
 		id: arm1
-		Mesh { id: arm1Mesh; source: "/objects/excavator_arm1.obj" }
+		Mesh { id: arm1Mesh; source: "file:objects/excavator_arm1.obj" }
 		ColorMaterial { id: fillMaterial1; color: "#e7e824" }
 		Transform { id: t1; matrix: transform1.matrix }
 		components: [arm1Mesh, fillMaterial1, t1]
@@ -75,7 +75,7 @@ Entity {
 
 	Entity {
 		id: arm1Wire
-		Mesh { id: arm1WireMesh; source: "/objects/excavator_arm1_wire.obj" }
+		Mesh { id: arm1WireMesh; source: "file:objects/excavator_arm1_wire.obj" }
 		ColorMaterial { id: wireMaterial1; color: "#232323" }
 		Transform { id: t1w; matrix: transform1.matrix }
 		components: [arm1WireMesh, wireMaterial1, t1w]
@@ -85,7 +85,7 @@ Entity {
 	// ------------------ BUCKET ------------------
 	Entity {
 		id: bucket
-		Mesh { id: bucketMesh; source: "/objects/excavator_bucket.obj" }
+		Mesh { id: bucketMesh; source: "file:objects/excavator_bucket.obj" }
 		ColorMaterial { id: fillMaterial2; color: "#e7e824" }
 		Transform { id: t2; matrix: transform2.matrix }
 		components: [bucketMesh, fillMaterial2, t2]
@@ -93,7 +93,7 @@ Entity {
 
 	Entity {
 		id: bucketWire
-		Mesh { id: bucketWireMesh; source: "/objects/excavator_bucket_wire.obj" }
+		Mesh { id: bucketWireMesh; source: "file:objects/excavator_bucket_wire.obj" }
 		ColorMaterial { id: wireMaterial2; color: "#232323" }
 		Transform { id: t2w; matrix: transform2.matrix }
 		components: [bucketWireMesh, wireMaterial2, t2w]
