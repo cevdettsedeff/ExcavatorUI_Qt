@@ -36,3 +36,40 @@ Makefile*
 .directory
 
 misc/
+
+# CMake
+build/
+build*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# Qt6 specific
+.qt/
+*.qmltc
+*.qrc.depends
+.qmlls.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+convert_to_glb.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+ExcavatorUI
+*.app
+*.exe
