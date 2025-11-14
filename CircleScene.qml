@@ -7,6 +7,20 @@ import Qt3D.Extras
 Entity {
 	id: root
 
+	Component.onCompleted: {
+		console.log("=== CIRCLE SCENE DEBUG ===")
+		console.log("CircleScene created")
+		console.log("  radius:", radius)
+		console.log("  height:", height)
+		console.log("  Camera position:", camera.position)
+		console.log("  Camera viewCenter:", camera.viewCenter)
+		console.log("  Camera left:", camera.left, "right:", camera.right)
+		console.log("  Camera bottom:", camera.bottom, "top:", camera.top)
+		console.log("  Camera nearPlane:", camera.nearPlane, "farPlane:", camera.farPlane)
+		console.log("  Machine1 pos:", machine1.pos)
+		console.log("  Machine2 pos:", machine2.pos)
+	}
+
 	ModelingCamera {
 		id:camera
 	}

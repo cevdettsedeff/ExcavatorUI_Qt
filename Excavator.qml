@@ -24,6 +24,21 @@ Entity {
 	property vector3d joint0: Qt.vector3d(-11.69973, 1.59875, 1.)
 	property vector3d joint1: Qt.vector3d(-22.08812, -5.44126, 1.)
 
+	Component.onCompleted: {
+		console.log("=== EXCAVATOR DEBUG ===")
+		console.log("Excavator created with:")
+		console.log("  pos:", pos)
+		console.log("  scale:", scale)
+		console.log("  y:", y)
+		console.log("  radius:", radius)
+		console.log("  customX:", customX, "isNaN:", isNaN(customX))
+		console.log("  customZ:", customZ, "isNaN:", isNaN(customZ))
+		var finalX = isNaN(customX) ? .85 * radius * Math.cos(pos * Math.PI / 180) : customX
+		var finalZ = isNaN(customZ) ? -.85 * radius * Math.sin(pos * Math.PI / 180) : customZ
+		console.log("  Final position: (" + finalX + ", " + y + ", " + finalZ + ")")
+		console.log("  Root components count:", root.components.length)
+	}
+
 	components: [
 		Transform {
 			id: rootTransform
@@ -57,54 +72,102 @@ Entity {
 	// ------------------ ARM 0 ------------------
 	Entity {
 		id: arm0
-		Mesh { id: arm0Mesh; source: "file:objects/excavator_arm0.obj" }
+		Mesh {
+			id: arm0Mesh
+			source: "file:objects/excavator_arm0.obj"
+			onStatusChanged: console.log("ARM0 Mesh status:", status, "source:", source)
+		}
 		ColorMaterial { id: fillMaterial0; color: "#e7e824" }
 		Transform { id: t0; rotation: transform0.rotation }
 		components: [arm0Mesh, fillMaterial0, t0]
+
+		Component.onCompleted: {
+			console.log("ARM0 Entity created, components:", arm0.components.length)
+		}
 	}
 
 	Entity {
 		id: arm0Wire
-		Mesh { id: arm0WireMesh; source: "file:objects/excavator_arm0_wire.obj" }
+		Mesh {
+			id: arm0WireMesh
+			source: "file:objects/excavator_arm0_wire.obj"
+			onStatusChanged: console.log("ARM0 Wire Mesh status:", status, "source:", source)
+		}
 		ColorMaterial { id: wireMaterial0; color: "#232323" }
 		Transform { id: t0w; rotation: transform0.rotation }
 		components: [arm0WireMesh, wireMaterial0, t0w]
+
+		Component.onCompleted: {
+			console.log("ARM0 Wire Entity created, components:", arm0Wire.components.length)
+		}
 	}
 
 
 	// ------------------ ARM 1 ------------------
 	Entity {
 		id: arm1
-		Mesh { id: arm1Mesh; source: "file:objects/excavator_arm1.obj" }
+		Mesh {
+			id: arm1Mesh
+			source: "file:objects/excavator_arm1.obj"
+			onStatusChanged: console.log("ARM1 Mesh status:", status, "source:", source)
+		}
 		ColorMaterial { id: fillMaterial1; color: "#e7e824" }
 		Transform { id: t1; matrix: transform1.matrix }
 		components: [arm1Mesh, fillMaterial1, t1]
+
+		Component.onCompleted: {
+			console.log("ARM1 Entity created, components:", arm1.components.length)
+		}
 	}
 
 	Entity {
 		id: arm1Wire
-		Mesh { id: arm1WireMesh; source: "file:objects/excavator_arm1_wire.obj" }
+		Mesh {
+			id: arm1WireMesh
+			source: "file:objects/excavator_arm1_wire.obj"
+			onStatusChanged: console.log("ARM1 Wire Mesh status:", status, "source:", source)
+		}
 		ColorMaterial { id: wireMaterial1; color: "#232323" }
 		Transform { id: t1w; matrix: transform1.matrix }
 		components: [arm1WireMesh, wireMaterial1, t1w]
+
+		Component.onCompleted: {
+			console.log("ARM1 Wire Entity created, components:", arm1Wire.components.length)
+		}
 	}
 
 
 	// ------------------ BUCKET ------------------
 	Entity {
 		id: bucket
-		Mesh { id: bucketMesh; source: "file:objects/excavator_bucket.obj" }
+		Mesh {
+			id: bucketMesh
+			source: "file:objects/excavator_bucket.obj"
+			onStatusChanged: console.log("BUCKET Mesh status:", status, "source:", source)
+		}
 		ColorMaterial { id: fillMaterial2; color: "#e7e824" }
 		Transform { id: t2; matrix: transform2.matrix }
 		components: [bucketMesh, fillMaterial2, t2]
+
+		Component.onCompleted: {
+			console.log("BUCKET Entity created, components:", bucket.components.length)
+		}
 	}
 
 	Entity {
 		id: bucketWire
-		Mesh { id: bucketWireMesh; source: "file:objects/excavator_bucket_wire.obj" }
+		Mesh {
+			id: bucketWireMesh
+			source: "file:objects/excavator_bucket_wire.obj"
+			onStatusChanged: console.log("BUCKET Wire Mesh status:", status, "source:", source)
+		}
 		ColorMaterial { id: wireMaterial2; color: "#232323" }
 		Transform { id: t2w; matrix: transform2.matrix }
 		components: [bucketWireMesh, wireMaterial2, t2w]
+
+		Component.onCompleted: {
+			console.log("BUCKET Wire Entity created, components:", bucketWire.components.length)
+		}
 	}
 
 
