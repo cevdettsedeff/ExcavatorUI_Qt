@@ -28,12 +28,9 @@ Entity {
 	Excavator {
 		id: machine1
 		radius: root.radius
-		components: [
-			Transform {
-				scale: 0.03
-				translation: Qt.vector3d(.85 * root.radius, height - iHeight + bHeight / 2, 0)
-			}
-		]
+		y: height - iHeight + bHeight / 2
+		scale: 0.03
+		pos: 0  // Fixed position, no rotation
 	}
 
 	StandBoard {
