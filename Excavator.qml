@@ -24,7 +24,7 @@ Entity {
 	property vector3d joint0: Qt.vector3d(-11.69973, 1.59875, 1.)
 	property vector3d joint1: Qt.vector3d(-22.08812, -5.44126, 1.)
 
-	Component.onCompleted: {
+	QQ2.Component.onCompleted: {
 		console.log("=== EXCAVATOR DEBUG ===")
 		console.log("Excavator created with:")
 		console.log("  pos:", pos)
@@ -81,7 +81,7 @@ Entity {
 		Transform { id: t0; rotation: transform0.rotation }
 		components: [arm0Mesh, fillMaterial0, t0]
 
-		Component.onCompleted: {
+		QQ2.Component.onCompleted: {
 			console.log("ARM0 Entity created, components:", arm0.components.length)
 		}
 	}
@@ -97,7 +97,7 @@ Entity {
 		Transform { id: t0w; rotation: transform0.rotation }
 		components: [arm0WireMesh, wireMaterial0, t0w]
 
-		Component.onCompleted: {
+		QQ2.Component.onCompleted: {
 			console.log("ARM0 Wire Entity created, components:", arm0Wire.components.length)
 		}
 	}
@@ -115,7 +115,7 @@ Entity {
 		Transform { id: t1; matrix: transform1.matrix }
 		components: [arm1Mesh, fillMaterial1, t1]
 
-		Component.onCompleted: {
+		QQ2.Component.onCompleted: {
 			console.log("ARM1 Entity created, components:", arm1.components.length)
 		}
 	}
@@ -131,7 +131,7 @@ Entity {
 		Transform { id: t1w; matrix: transform1.matrix }
 		components: [arm1WireMesh, wireMaterial1, t1w]
 
-		Component.onCompleted: {
+		QQ2.Component.onCompleted: {
 			console.log("ARM1 Wire Entity created, components:", arm1Wire.components.length)
 		}
 	}
@@ -149,7 +149,7 @@ Entity {
 		Transform { id: t2; matrix: transform2.matrix }
 		components: [bucketMesh, fillMaterial2, t2]
 
-		Component.onCompleted: {
+		QQ2.Component.onCompleted: {
 			console.log("BUCKET Entity created, components:", bucket.components.length)
 		}
 	}
@@ -165,7 +165,7 @@ Entity {
 		Transform { id: t2w; matrix: transform2.matrix }
 		components: [bucketWireMesh, wireMaterial2, t2w]
 
-		Component.onCompleted: {
+		QQ2.Component.onCompleted: {
 			console.log("BUCKET Wire Entity created, components:", bucketWire.components.length)
 		}
 	}
