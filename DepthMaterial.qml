@@ -1,5 +1,5 @@
-import Qt3D.Core 2.0
-import Qt3D.Render 2.0
+import Qt3D.Core
+import Qt3D.Render
 
 Material {
 	id: material
@@ -24,8 +24,8 @@ Material {
 					]
 //					renderStates: CullFace { mode: CullFace.NoCulling }
 					shaderProgram: ShaderProgram {
-						vertexShaderCode: loadSource("file:./shaders/depthmap.vert")
-						fragmentShaderCode: loadSource("file:./shaders/depthmap.frag")
+						vertexShaderCode: loadSource("file:shaders/depthmap.vert")
+						fragmentShaderCode: loadSource("file:shaders/depthmap.frag")
 					}
 				}
 
@@ -40,7 +40,7 @@ Material {
 								y: WrapMode.ClampToEdge
 							}
 							TextureImage {
-								source: "textures/heightmap.png"
+								source: "file:textures/heightmap.png"
 							}
 						}
 					},
@@ -54,7 +54,7 @@ Material {
 								y: WrapMode.ClampToEdge
 							}
 							TextureImage {
-								source: "textures/colormap.png"
+								source: "file:textures/colormap.png"
 							}
 						}
 					},

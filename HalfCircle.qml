@@ -1,6 +1,6 @@
-import Qt3D.Core 2.0
-import Qt3D.Render 2.0
-import Qt3D.Extras 2.0
+import Qt3D.Core
+import Qt3D.Render
+import Qt3D.Extras
 
 Entity {
 	id: root
@@ -35,8 +35,8 @@ Entity {
 						filterKeys: FilterKey { name: "pass"; value: "frameline" }
 						renderStates: CullFace { mode: CullFace.NoCulling }
 						shaderProgram: ShaderProgram {
-							vertexShaderCode: loadSource("file:./shaders/line.vert")
-							fragmentShaderCode: loadSource("file:./shaders/halfcircle.frag")
+							vertexShaderCode: loadSource("file:shaders/line.vert")
+							fragmentShaderCode: loadSource("file:shaders/halfcircle.frag")
 						}
 					}
 

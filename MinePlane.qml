@@ -1,8 +1,8 @@
-import QtQuick 2.7 as QQ2
+import QtQuick as QQ2
 
-import Qt3D.Core 2.0
-import Qt3D.Render 2.0
-import Qt3D.Extras 2.0
+import Qt3D.Core
+import Qt3D.Render
+import Qt3D.Extras
 
 Entity {
 	id: root

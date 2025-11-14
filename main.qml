@@ -1,12 +1,12 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.1
-import QtQuick.Window 2.2
-import QtQuick.Controls.Material 2.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Window
+import QtQuick.Controls.Material
 
 import QtQuick.Scene3D
 
-import QtQuick.LocalStorage 2.0
+import QtQuick.LocalStorage
 
 ApplicationWindow {
 	id:app
