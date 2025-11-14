@@ -1,15 +1,14 @@
-#define FP highp
+#version 330 core
 
-attribute vec3 vertexPosition;
-attribute vec2 vertexTexCoord;
+in vec3 vertexPosition;
+in vec2 vertexTexCoord;
 
-varying vec2 texCoord;
+out vec2 texCoord;
 
 uniform mat4 mvp;
-
 
 void main()
 {
 	texCoord = vertexTexCoord;
-	gl_Position = mvp  *  vec4( vertexPosition, 1.0 );
+	gl_Position = mvp * vec4(vertexPosition, 1.0);
 }
