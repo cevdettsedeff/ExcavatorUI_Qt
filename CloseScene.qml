@@ -30,6 +30,8 @@ Entity {
 		radius: root.radius
 		y: height - iHeight + bHeight / 2
 		scale: 0.03
+		customX: .86 * root.radius
+		customZ: 0
 		pos: 0  // Fixed position, no rotation
 	}
 
