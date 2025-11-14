@@ -1,8 +1,11 @@
-#define FP highp
+#version 330 core
+
+in vec2 texCoord;
+out vec4 fragColor;
 
 uniform vec3 color;
 
 void main()
 {
-	gl_FragColor = vec4(color, 1.);
+	fragColor = vec4(color, 1.0);
 }

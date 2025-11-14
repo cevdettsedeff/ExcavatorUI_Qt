@@ -1,37 +1,34 @@
-//out vec4 gl_FragColor;
+#version 330 core
 
-varying vec2 texCoord;
-varying vec3 modelPos;
+in vec2 texCoord;
+in vec3 modelPos;
+
+out vec4 fragColor;
 
 uniform sampler2D texture;
 uniform sampler2D colormap;
 uniform float radius;
 uniform float rotation;
 
-const float dd = 1.732/3.;
-//const float dd = .1;
+const float dd = 1.732 / 3.0;
 
 void main()
 {
-	if (length(modelPos)<radius) {
-		float data = length(texture2D(texture, texCoord).rgb);
-		float dxn = length(texture2D(texture, texCoord+
-									 1e-3*vec2(-cos(rotation), -sin(rotation))).rgb);
-		float dxp = length(texture2D(texture, texCoord+
-									 1e-3*vec2(cos(rotation), -sin(rotation))).rgb);
-		float dyn = length(texture2D(texture, texCoord+
-									 1e-3*vec2(sin(rotation), -cos(rotation))).rgb);
-		float dyp = length(texture2D(texture, texCoord+
-									 1e-3*vec2(-sin(rotation), cos(rotation))).rgb);
-		vec3 color = texture2D(colormap, vec2(data/1.732,.0)).rgb;
+	if (length(modelPos) < radius) {
+		float data = length(texture(texture, texCoord).rgb);
+		float dxn = length(texture(texture, texCoord + 1e-3 * vec2(-cos(rotation), -sin(rotation))).rgb);
+		float dxp = length(texture(texture, texCoord + 1e-3 * vec2(cos(rotation), -sin(rotation))).rgb);
+		float dyn = length(texture(texture, texCoord + 1e-3 * vec2(sin(rotation), -cos(rotation))).rgb);
+		float dyp = length(texture(texture, texCoord + 1e-3 * vec2(-sin(rotation), cos(rotation))).rgb);
+		vec3 color = texture(colormap, vec2(data / 1.732, 0.0)).rgb;
 
-		float d = dxp-dxn-dyp+dyn;
-		if (d>0.)
-			d = dd/(d+dd*dd/d);
+		float d = dxp - dxn - dyp + dyn;
+		if (d > 0.0)
+			d = dd / (d + dd * dd / d);
 		else
-			d = atan(d/dd);
-		d = 1. + clamp(d*dd*20., -.5, .5);
+			d = atan(d / dd);
+		d = 1.0 + clamp(d * dd * 20.0, -0.5, 0.5);
 
-		gl_FragColor = vec4(color * d, 1.);
+		fragColor = vec4(color * d, 1.0);
 	} else discard;
 }
