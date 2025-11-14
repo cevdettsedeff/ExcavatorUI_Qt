@@ -7,7 +7,7 @@ import Qt3D.Extras
 Entity {
 	id: root
 
-	Component.onCompleted: {
+	QQ2.Component.onCompleted: {
 		console.log("=== SIDE SCENE DEBUG ===")
 		console.log("SideScene created")
 		console.log("  radius:", radius)
