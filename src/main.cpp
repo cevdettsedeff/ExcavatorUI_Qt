@@ -14,9 +14,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    // Load main QML file from QML module
-    // When using qt_add_qml_module, the path changes
-    const QUrl url(QStringLiteral("qrc:/qt/qml/ExcavatorUI/main.qml"));
+    // Load main QML file from resource file
+    const QUrl url(QStringLiteral("qrc:/src/qml/main.qml"));
 
     QObject::connect(
         &engine, &QQmlApplicationEngine::objectCreationFailed,

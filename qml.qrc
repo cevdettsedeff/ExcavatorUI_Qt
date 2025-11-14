@@ -1,0 +1,54 @@
+<RCC>
+    <qresource prefix="/">
+        <!-- QML Files -->
+        <file>src/qml/main.qml</file>
+
+        <!-- UI Components -->
+        <file>src/qml/components/ui/ColorButton.qml</file>
+        <file>src/qml/components/ui/ColorFuel.qml</file>
+        <file>src/qml/components/ui/Palette.qml</file>
+
+        <!-- 3D Components -->
+        <file>src/qml/components/3d/Excavator.qml</file>
+        <file>src/qml/components/3d/Circle.qml</file>
+        <file>src/qml/components/3d/HalfCircle.qml</file>
+        <file>src/qml/components/3d/Line.qml</file>
+        <file>src/qml/components/3d/MinePlane.qml</file>
+        <file>src/qml/components/3d/StandBoard.qml</file>
+
+        <!-- Scenes -->
+        <file>src/qml/scenes/CircleScene.qml</file>
+        <file>src/qml/scenes/CloseScene.qml</file>
+        <file>src/qml/scenes/SideScene.qml</file>
+        <file>src/qml/scenes/SkyScene.qml</file>
+
+        <!-- Utils -->
+        <file>src/qml/utils/Time.qml</file>
+        <file>src/qml/utils/Inputs0.qml</file>
+        <file>src/qml/utils/misc.js</file>
+
+        <!-- 3D Models -->
+        <file>resources/models/excavator/excavator_arm0.glb</file>
+        <file>resources/models/excavator/excavator_arm0_wire.glb</file>
+        <file>resources/models/excavator/excavator_arm1.glb</file>
+        <file>resources/models/excavator/excavator_arm1_wire.glb</file>
+        <file>resources/models/excavator/excavator_bucket.glb</file>
+        <file>resources/models/excavator/excavator_bucket_wire.glb</file>
+
+        <!-- Textures -->
+        <file>resources/textures/colormap.png</file>
+        <file>resources/textures/heightmap.png</file>
+        <file>resources/textures/hm.png</file>
+
+        <!-- Shaders -->
+        <file>resources/shaders/circle.frag</file>
+        <file>resources/shaders/colorframe.frag</file>
+        <file>resources/shaders/depthmap.frag</file>
+        <file>resources/shaders/depthmap.vert</file>
+        <file>resources/shaders/halfcircle.frag</file>
+        <file>resources/shaders/line.frag</file>
+        <file>resources/shaders/line.vert</file>
+        <file>resources/shaders/passthrough.vert</file>
+        <file>resources/shaders/passthrough_color.frag</file>
+    </qresource>
+</RCC>
